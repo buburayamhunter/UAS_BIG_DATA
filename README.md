@@ -67,13 +67,39 @@ Langkah-langkah untuk menangani nilai hilang:
     data.dropna(subset=['track_name', 'track_artist'], inplace=True)
     ```
 
----
-
-### **3. Menghapus Duplikasi**
+3. **Menghapus Duplikasi**
 - Duplikasi diperiksa berdasarkan ID unik lagu di kolom `track_id`. Baris duplikat dihapus untuk memastikan setiap lagu hanya muncul sekali.
 - Kode:
   ```python
   data.drop_duplicates(subset='track_id', inplace=True)
+
+4. **Subset Kolom Relevan**
+- Memfokuskan analisis pada kolom yang relevan
+- Kode:
+  ```python
+  columns_needed = [
+    'track_name', 'track_artist', 'track_popularity', 
+    'playlist_genre', 'danceability', 'energy', 'valence', 
+    'tempo', 'duration_ms'
+  ]
+  data_cleaned = data[columns_needed]
+
+5. **Tinjauan Data Akhir**
+   Setelah pembersihan, dataset memiliki lebih dari 32.000 baris dengan kolom berikut:
+  - **Jumlah baris:** 32.000+ baris.
+  - **Kolom yang tersisa:** 
+
+| **Kolom**             | **Deskripsi**                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| `track_name`          | Nama lagu.                                                                 |
+| `track_artist`        | Nama artis.                                                                |
+| `track_popularity`    | Skor popularitas (0-100).                                                  |
+| `playlist_genre`      | Genre utama lagu.                                                          |
+| `danceability`        | Skor kesesuaian untuk menari (0.0-1.0).                                     |
+| `energy`              | Tingkat energi lagu (0.0-1.0).                                             |
+| `valence`             | Tingkat mood positif lagu (0.0-1.0).                                       |
+| `tempo`               | Tempo lagu dalam BPM (beats per minute).                                   |
+| `duration_ms`         | Durasi lagu dalam milidetik. 
 
 
 
