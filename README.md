@@ -105,17 +105,17 @@ Langkah-langkah untuk menangani nilai hilang:
 ## **Team**
 
 - **Rama Firdaus**  
-  Email: ramafirdaus@webmail.umm.ac.id  
+  ramafirdaus@webmail.umm.ac.id  
 
 - **Bintang Primadata Putra**  
-  Email: bintangprimadata@webmail.umm.ac.id  
+  bintangprimadata@webmail.umm.ac.id  
 
 - **Fico Yayan Purwadi**  
-  Email: nebulablue@webmail.umm.ac.id  
+  nebulablue@webmail.umm.ac.id  
 
 **Supervised by:**  
 - **Yuda Munarko**  
-  Email: yuda@umm.ac.id
+  yuda@umm.ac.id
 
 
 
