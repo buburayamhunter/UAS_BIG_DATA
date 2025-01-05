@@ -44,3 +44,74 @@ Berikut adalah daftar library Python yang digunakan dalam analisis:
     - Beberapa nilai hilang ditemukan, terutama dalam kolom tanggal rilis album.
 
 ---
+### **Langkah Pembersihan Data**
+1. **Memuat Data**
+   ```python
+   data = pd.read_csv('tidy_spotify_songs.csv')
+
+   ## **Data Preprocessing**
+
+2. **Menangani Nilai yang Hilang**
+Langkah-langkah untuk menangani nilai hilang:
+- **Kolom `track_album_release_date`:**
+  - Nilai kosong diubah menjadi format `NaT` menggunakan `pd.to_datetime` dengan parameter `errors='coerce'`.
+  - **Tujuan:** Memastikan analisis berbasis waktu tetap akurat.
+  - Kode:
+    ```python
+    data['track_album_release_date'] = pd.to_datetime(data['track_album_release_date'], errors='coerce')
+    ```
+- **Kolom `track_name` dan `track_artist`:**
+  - Baris dengan nilai kosong dihapus karena kolom ini penting untuk identifikasi lagu.
+  - Kode:
+    ```python
+    data.dropna(subset=['track_name', 'track_artist'], inplace=True)
+    ```
+
+---
+
+### **3. Menghapus Duplikasi**
+- Duplikasi diperiksa berdasarkan ID unik lagu di kolom `track_id`. Baris duplikat dihapus untuk memastikan setiap lagu hanya muncul sekali.
+- Kode:
+  ```python
+  data.drop_duplicates(subset='track_id', inplace=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
